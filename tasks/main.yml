@@ -1,0 +1,23 @@
+---
+
+  - name: Check mandatory role variable pimatic_nodejs_arch
+    fail:
+      msg: "Please set variable pimatic_nodejs_arch to choose nodejs hardware architecture,
+      typically 'armv6l' (Pi Model A, B, B+ or Zero) or 'armv7l' (Pi 2 Model B or Pi 3 Model B)"
+    when: pimatic_nodejs_arch == ""
+    tags: [ 'pimatic', 'pimatic:nodejs' ]
+
+
+
+  - include: nodejs.yml
+    tags: [ 'pimatic', 'pimatic:nodejs' ]
+
+  - include: home-dir.yml
+    tags: [ 'pimatic', 'pimatic:home-dir', 'pimatic:ssl', 'pimatic:pimatic' ]
+
+  - include: ssl.yml
+    when: pimatic_ssl == true
+    tags: [ 'pimatic', 'pimatic:ssl' ]
+
+  - include: pimatic.yml
+    tags: [ 'pimatic', 'pimatic:pimatic' ]

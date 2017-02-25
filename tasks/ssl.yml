@@ -1,0 +1,23 @@
+---
+
+  - name: Create self-signed SSL certificate
+    become: no
+    command: |
+      openssl req -new -nodes -x509 -subj "/C=DE/ST=Berlin/L=Berlin/O=layereigt/CN=${ansible_fqdn}" -days 3650
+      -keyout "{{ pimatic_home_dir }}/privkey.pem"
+      -out "{{ pimatic_home_dir }}/cert.pem"
+      -extensions v3_ca creates="{{ pimatic_home_dir }}/cert.pem"
+    changed_when: false
+
+  - name: Define ansible variables for paths to ssl private key and certificate
+    set_fact:
+      pimatic_ssl_privkey: "{{ pimatic_home_dir }}/privkey.pem"
+      pimatic_ssl_cert: "{{ pimatic_home_dir }}/cert.pem"
+
+  - name: Show variable pimatic_ssl_privkey
+    debug:
+      var: pimatic_ssl_privkey
+
+  - name: Show variable pimatic_ssl_cert
+    debug:
+      var: pimatic_ssl_privkey

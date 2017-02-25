@@ -1,0 +1,62 @@
+---
+
+  #
+  # the pimatic configuration (config.json) can only be changed when pimatic is NOT running,
+  # otherwise pimatic will overwrite your changes
+  #
+  - name: Stop pimatic service
+    become: yes
+    service:
+      name: pimatic
+      state: stopped
+
+  - name: Install pimatic to {{ pimatic_home_dir }}
+    become: no
+    npm:
+      name: pimatic
+      path: "{{ pimatic_home_dir }}"
+      production: yes
+
+  - name: Copy pimatic configuration file (config.json)
+    become: no
+    template:
+      src: "{{ pimatic_config_template }}"
+      dest: "{{ pimatic_home_dir }}/config.json"
+      backup: yes
+#    notify:
+#      - Restart pimatic
+
+  - name: Install pimatic nodejs app globally (npm link)
+    become: yes
+    command: npm link chdir="{{ pimatic_home_dir }}/node_modules/pimatic"
+    changed_when: false # TODO: find out when it actually changed
+
+  - name: Download and install pimatic serivce script to /etc/init.d/pimatic
+    become: yes
+    get_url:
+      url: "https://raw.githubusercontent.com/pimatic/pimatic/v0.9.x/install/pimatic-init-d"
+      dest: "/etc/init.d/pimatic"
+      owner: root
+      group: root
+      mode: 0755
+
+  - name: Install pimatic as system service
+    become: yes
+    command: update-rc.d pimatic defaults
+    changed_when: false # TODO: find out when it actually changed
+
+  - name: Start pimatic service
+    become: yes
+    service:
+      name: pimatic
+      state: started
+
+  #
+  # depending on the configured plugins pimatic start-up can take up to 50min on a Pi Zero
+  #
+  - name: Wait for pimatic to start up on port {{ pimatic_port }}
+    wait_for:
+      host: 127.0.0.1
+      port: "{{ pimatic_port }}"
+      state: started
+      timeout: 3600 # 60min

@@ -1,0 +1,19 @@
+---
+
+# choose nodejs hardware architecture,
+# typically 'armv6l' (Pi Model A, B, B+ or Zero) or 'armv7l' (Pi 2 Model B or Pi 3 Model B)
+pimatic_nodejs_arch: ""
+# where should nodejs be installed to
+pimatic_nodejs_install_dir: "/usr/local"
+# name of the directory in the user's home directory where pimatic should be installed to
+pimatic_app_dir: "pimatic-app"
+
+# pimatic configuration
+pimatic_config_template: config.json.j2
+
+# port we will wait_for pimatic to start up
+pimatic_port: 8080
+
+# should we generate self signed ssl certificates
+pimatic_ssl: false
+

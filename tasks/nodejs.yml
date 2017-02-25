@@ -1,0 +1,11 @@
+---
+
+  - name: Download and install node.js to {{ pimatic_nodejs_install_dir }}
+    unarchive:
+      src: "https://nodejs.org/dist/v4.6.2/node-v4.6.2-linux-{{ pimatic_nodejs_arch }}.tar.gz"
+      dest: "{{ pimatic_nodejs_install_dir }}"
+      owner: root
+      group: root
+      copy: no
+      extra_opts:
+        - "--strip=1"

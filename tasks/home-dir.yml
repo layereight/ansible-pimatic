@@ -1,0 +1,21 @@
+---
+
+  #
+  # We can't use {{ ansible_env.HOME }} when the whole role is run with sudo permissions
+  # since {{ ansible_env.HOME }} will typically point to "/root" then.
+  #
+  - name: Determine ansible_user's home directory
+    become: no
+    command: "echo $HOME"
+    register: pimatic_home_raw
+    changed_when: false
+
+  - name: Register ansible_user's home directory {{ pimatic_home_raw.stdout }}/{{ pimatic_app_dir }} as variable
+    set_fact:
+      pimatic_home_dir: "{{ pimatic_home_raw.stdout }}/{{ pimatic_app_dir }}"
+
+  - name: Create pimatic install directory {{ pimatic_home_dir }}
+    become: no
+    file:
+      dest: "{{ pimatic_home_dir }}"
+      state: directory

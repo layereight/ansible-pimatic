@@ -1,0 +1,62 @@
+{
+  "//": "Please only change this file when pimatic is NOT running, otherwise pimatic will overwrite your changes.",
+  "settings": {
+    "httpServer": {
+      "enabled": true,
+      "port": {{ pimatic_port }}
+    },
+    "database": {
+    }
+  },
+  "plugins": [
+    {
+      "plugin": "cron"
+    },
+    {
+      "plugin": "mobile-frontend"
+    }
+  ],
+  "devices": [
+
+  ],
+  "rules": [
+
+  ],
+  "pages": [
+    {
+      "id": "favourite",
+      "name": "Favourites",
+      "devices": []
+    }
+  ],
+  "groups": [
+
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "role": "admin"
+    }
+  ],
+  "roles": [
+    {
+      "name": "admin",
+      "permissions": {
+        "pages": "write",
+        "rules": "write",
+        "variables": "write",
+        "messages": "write",
+        "events": "write",
+        "devices": "write",
+        "groups": "write",
+        "plugins": "write",
+        "updates": "write",
+        "database": "write",
+        "config": "write",
+        "controlDevices": true,
+        "restart": true
+      }
+    }
+  ]
+}

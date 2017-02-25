@@ -1,0 +1,7 @@
+---
+
+  - name: Restart pimatic
+    become: yes
+    service:
+      name: pimatic
+      state: restarted
