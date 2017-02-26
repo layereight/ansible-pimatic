@@ -29,7 +29,7 @@
     command: npm link chdir="{{ pimatic_home_dir }}/node_modules/pimatic"
     changed_when: false # TODO: find out when it actually changed
 
-  - name: Download and install pimatic serivce script to /etc/init.d/pimatic
+  - name: Download and install pimatic service script to /etc/init.d/pimatic
     become: yes
     get_url:
       url: "https://raw.githubusercontent.com/pimatic/pimatic/v0.9.x/install/pimatic-init-d"
