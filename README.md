@@ -56,18 +56,18 @@ or **armv7l** (Pi 2 Model B or Pi 3 Model B).
 ## Example Playbook
 
 Typical playbook run:
-```bash
+```sh
 $ ansible-playbook -i inventory pimatic.yml
 ```
 
-contents of inventory
-```
+*inventory*
+```INI
 [raspberry]
 pizero ansible_host=192.168.0.101 ansible_user=pi ansible_ssh_pass=raspberry 
 ```
 
-contents of pimatic.yml
-```json
+*pimatic.yml*
+```YAML
 - hosts: rasberrypi
   
   roles:
@@ -81,7 +81,7 @@ contents of pimatic.yml
     pimatic_admin_password: "verysecret"
 ```
 
-contents of templates/pimatic_config.json.j2
+*templates/pimatic_config.json.j2*
 ```jinja2
 {
   "settings": {
