@@ -156,7 +156,7 @@ pizero ansible_host=192.168.0.101 ansible_user=pi ansible_ssh_pass=raspberry
 
 Typical run:
 ```sh
-$ ansible-galaxy install -r requirements.yml`
+$ ansible-galaxy install -r requirements.yml
 ```
 *requirements.yml*
 ```YAML
