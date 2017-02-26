@@ -55,7 +55,18 @@ or **armv7l** (Pi 2 Model B or Pi 3 Model B).
 
 ## Example Playbook
 
-contents of playbook.yml
+Typical playbook run:
+```bash
+$ ansible-playbook -i inventory pimatic.yml
+```
+
+contents of inventory
+```
+[raspberry]
+pizero ansible_host=192.168.0.101 ansible_user=pi ansible_ssh_pass=raspberry 
+```
+
+contents of pimatic.yml
 ```json
 - hosts: rasberrypi
   
