@@ -9,6 +9,9 @@
 
 
 
+  - include: prerequisites.yml
+    tags: [ 'pimatic', 'pimatic:prerequisites' ]
+
   - include: nodejs.yml
     tags: [ 'pimatic', 'pimatic:nodejs' ]
 

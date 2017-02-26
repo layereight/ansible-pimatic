@@ -1,0 +1,11 @@
+---
+
+  - name: Install necessary software packages
+    apt:
+      name: "{{ item }}"
+      state: latest
+      update_cache: yes
+    with_items:
+      - build-essential
+      - git
+      - openssl
