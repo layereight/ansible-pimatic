@@ -154,9 +154,12 @@ pizero ansible_host=192.168.0.101 ansible_user=pi ansible_ssh_pass=raspberry
 
 ## Install the role via Ansible Galaxy
 
-* execute `ansible-galaxy install -r requirements.yml`
-* contents of requirements.yml:
+Typical run:
+```sh
+$ ansible-galaxy install -r requirements.yml`
 ```
+*requirements.yml*
+```YAML
 - name: pimatic
   src: https://github.com/layereight/ansible-pimatic
   version: "1.0"
