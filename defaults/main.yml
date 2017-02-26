@@ -8,13 +8,15 @@ pimatic_nodejs_install_dir: "/usr/local"
 # name of the directory in the user's home directory where pimatic should be installed to
 pimatic_app_dir: "pimatic-app"
 
+
+# port pimatic's web frontend will listen on, we will also wait_for pimatic to start up on that port
+pimatic_port: 8080
+
 # pimatic configuration
 pimatic_config_template: config.json.j2
 
 # should the role wait for pimatic to start up, depending on hardware and configured plugins this may take up to 1h
 pimatic_waitfor_startup: true
-# port we will wait_for pimatic to start up
-pimatic_port: 8080
 
 # should we generate self signed ssl certificates
 pimatic_ssl: false
