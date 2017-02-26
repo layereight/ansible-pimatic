@@ -23,8 +23,6 @@
       src: "{{ pimatic_config_template }}"
       dest: "{{ pimatic_home_dir }}/config.json"
       backup: yes
-#    notify:
-#      - Restart pimatic
 
   - name: Install pimatic nodejs app globally (npm link)
     become: yes
