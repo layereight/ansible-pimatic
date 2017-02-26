@@ -55,6 +55,7 @@
   # depending on the configured plugins pimatic start-up can take up to 50min on a Pi Zero
   #
   - name: Wait for pimatic to start up on port {{ pimatic_port }}
+    when: pimatic_waitfor_startup == true
     wait_for:
       host: 127.0.0.1
       port: "{{ pimatic_port }}"
