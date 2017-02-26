@@ -62,13 +62,13 @@ $ ansible-playbook -i inventory pimatic.yml
 
 *inventory*
 ```INI
-[raspberry]
+[raspberrypi]
 pizero ansible_host=192.168.0.101 ansible_user=pi ansible_ssh_pass=raspberry 
 ```
 
 *pimatic.yml*
 ```YAML
-- hosts: rasberrypi
+- hosts: raspberrypi
   
   roles:
     - pimatic
