@@ -20,7 +20,7 @@
 
   - include: ssl.yml
     when: pimatic_ssl == true
-    tags: [ 'pimatic', 'pimatic:ssl' ]
+    tags: [ 'pimatic', 'pimatic:ssl', 'pimatic:pimatic' ]
 
   - include: pimatic.yml
     tags: [ 'pimatic', 'pimatic:pimatic' ]

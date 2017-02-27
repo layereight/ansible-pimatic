@@ -162,6 +162,6 @@ $ ansible-galaxy install -r requirements.yml
 ```YAML
 - name: pimatic
   src: https://github.com/layereight/ansible-pimatic
-  version: "1.1"
+  version: "1.2"
 ```
 * also see the [Ansible Galaxy documentation](http://docs.ansible.com/ansible/galaxy.html)
