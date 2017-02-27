@@ -1,6 +1,5 @@
-[![Build Status](https://travis-ci.org/layereight/ansible-pimatic.svg?branch=master)](https://travis-ci.org/layereight/ansible-pimatic)
 
-# ansible-pimatic
+# ansible-pimatic [![Build Status](https://travis-ci.org/layereight/ansible-pimatic.svg?branch=master)](https://travis-ci.org/layereight/ansible-pimatic)
 
 An Ansible role to install and configure [pimatic](https://pimatic.org) - a smart home automation software for the
 [Raspberry Pi](https://www.raspberrypi.org/).
