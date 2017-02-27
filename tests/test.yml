@@ -1,0 +1,10 @@
+---
+
+- hosts: localhost
+  remote_user: root
+
+  roles:
+    - ansible-pimatic
+
+  vars:
+    pimatic_nodejs_arch: "x64"
