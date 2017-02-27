@@ -4,11 +4,18 @@
   # the pimatic configuration (config.json) can only be changed when pimatic is NOT running,
   # otherwise pimatic will overwrite your changes
   #
+  # Don't fail if serivce does not exist
+  # https://gist.github.com/tyrells/0a79681de339237cb04c
+  #
   - name: Stop pimatic service
     become: yes
     service:
       name: pimatic
       state: stopped
+    failed_when:
+      - result | failed
+      - "'find' not in result.msg and 'found' not in result.msg"
+    register: result
 
   - name: Install pimatic to {{ pimatic_home_dir }}
     become: no
