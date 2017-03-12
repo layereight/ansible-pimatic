@@ -2,8 +2,8 @@
 language: python
 python: "2.7"
 
-# Use the new container infrastructure
-sudo: false
+# Use the sudo enabled build environment
+sudo: required
 
 # Install ansible
 addons:
