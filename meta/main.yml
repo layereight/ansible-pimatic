@@ -19,3 +19,8 @@ galaxy_info:
     - raspberry
     - pi
     - pimatic
+
+  license:
+    - BSD
+
+  min_ansible_version: 2.1
