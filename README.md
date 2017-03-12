@@ -10,6 +10,26 @@ An Ansible role to install and configure [pimatic](https://pimatic.org) - a smar
 * network access to the Raspberry Pi and sshd enabled
 * a user with sudo permissions
 
+## Install the role via Ansible Galaxy
+
+Typical run:
+```sh
+$ ansible-galaxy install layereight.pimatic
+```
+
+If you want to install a specific version directly from github:
+```sh
+$ ansible-galaxy install -r requirements.yml
+```
+*requirements.yml*
+```YAML
+- name: pimatic
+  src: https://github.com/layereight/ansible-pimatic
+  version: "1.4"
+```
+* also see the [Ansible Galaxy documentation](http://docs.ansible.com/ansible/galaxy.html)
+
+
 ## Role Variables
 
 ### mandatory
@@ -152,17 +172,3 @@ pizero ansible_host=192.168.0.101 ansible_user=pi ansible_ssh_pass=raspberry
   ]
 }
 ```
-
-## Install the role via Ansible Galaxy
-
-Typical run:
-```sh
-$ ansible-galaxy install -r requirements.yml
-```
-*requirements.yml*
-```YAML
-- name: pimatic
-  src: https://github.com/layereight/ansible-pimatic
-  version: "1.3"
-```
-* also see the [Ansible Galaxy documentation](http://docs.ansible.com/ansible/galaxy.html)
