@@ -3,3 +3,19 @@
 galaxy_info:
   author: https://github.com/layereight/
   description: An Ansible role to install and configure pimatic - a smart home automation software for the Raspberry Pi.
+
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
+  galaxy_tags:
+    - smart
+    - home
+    - automation
+    - raspberry
+    - pi
+    - pimatic
