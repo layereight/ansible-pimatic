@@ -27,5 +27,5 @@ script:
   # Execute playbook
   - ansible-playbook -i tests/inventory tests/test.yml
 
-#notifications:
-#  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
