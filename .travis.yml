@@ -28,6 +28,8 @@ script:
   - ansible-playbook -i tests/inventory tests/test.yml
   # try to curl the pimatic frontend
   - curl -k -s "https://localhost/" > /dev/null
+  # try to login with the configured admin user
+  - curl -s -k -XPOST -d "username=admin&password=verysecret" "https://localhost/login" -w "%{http_code}" -o /dev/null | grep 200
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
