@@ -10,4 +10,6 @@
   vars:
     pimatic_nodejs_arch: "x64"
     pimatic_port: 443
+    pimatic_config_template: "pimatic_config.json.j2"
     pimatic_ssl: true
+    pimatic_admin_password: "verysecret"
