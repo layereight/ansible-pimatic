@@ -9,3 +9,5 @@
 
   vars:
     pimatic_nodejs_arch: "x64"
+    pimatic_port: 443
+    pimatic_ssl: true

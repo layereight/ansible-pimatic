@@ -26,6 +26,8 @@ script:
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
   # Execute playbook
   - ansible-playbook -i tests/inventory tests/test.yml
+  # try to curl the pimatic frontend
+  - curl -k -s "https://localhost/ > /dev/null
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
