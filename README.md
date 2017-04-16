@@ -65,6 +65,30 @@ or **armv7l** (Pi 2 Model B or Pi 3 Model B).
   * description: Configure whether we should generate self signed ssl certificates. If set to **true** the role will provide the variables
   **pimatic_ssl_privkey** and **pimatic_ssl_cert** with the paths to the generated ssl private key and certificate.
 
+* **pimatic_ssl_cn**
+  * default: "{{ ansible_fqdn }}"
+  * description: Common Name in certificate (CN in subject).
+  
+* **pimatic_ssl_c**
+  * default: "DE"
+  * description: Country in certificate (C in subject).
+  
+* **pimatic_ssl_st**
+  * default: ""
+  * description: State in certificate (ST in subject).
+
+* **pimatic_ssl_l**
+  * default: ""
+  * description: Location in certificate (L in subject).
+
+* **pimatic_ssl_o** 
+  * default: "pimatic"
+  * description: Organization in certificate (O in subject).
+  
+* **pimatic_ssl_ou**
+  * default: "pimatic"
+  * description: Organizational Unit in certificate (OU in subject).
+
 
 ### provided
 

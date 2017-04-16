@@ -3,7 +3,9 @@
   - name: Create self-signed SSL certificate
     become: no
     command: |
-      openssl req -new -nodes -x509 -subj "/C=DE/ST=Berlin/L=Berlin/O=layereigt/CN=${ansible_fqdn}" -days 3650
+      openssl req -new -nodes -x509
+      -subj "/C={{ pimatic_ssl_c }}/ST={{ pimatic_ssl_st }}/L={{ pimatic_ssl_l }}/O={{ pimatic_ssl_o }}/OU={{ pimatic_ssl_ou }}/CN={{ pimatic_ssl_cn }}"
+      -days 3650
       -keyout "{{ pimatic_home_dir }}/privkey.pem"
       -out "{{ pimatic_home_dir }}/cert.pem"
       -extensions v3_ca creates="{{ pimatic_home_dir }}/cert.pem"
