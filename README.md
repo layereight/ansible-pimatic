@@ -17,18 +17,18 @@ Typical run:
 $ ansible-galaxy install layereight.pimatic
 ```
 
-If you want to install a specific version directly from github:
+If you want to install a specific version in a collection with other roles using a role file:
 ```sh
-$ ansible-galaxy install -r requirements.yml
+$ ansible-galaxy install -r roles.yml
 ```
-*requirements.yml*
+*roles.yml*
 ```YAML
-- name: pimatic
-  src: https://github.com/layereight/ansible-pimatic
-  version: "1.4"
+- name: layereight.pimatic
+  src: layereight.pimatic
+  version: "1.5"
 ```
-* also see the [Ansible Galaxy documentation](http://docs.ansible.com/ansible/galaxy.html)
-
+* also see the [Ansible Galaxy documentation](http://docs.ansible.com/ansible/galaxy.html) and the 
+[Ansible Galaxy introduction](https://galaxy.ansible.com/intro)
 
 ## Role Variables
 
