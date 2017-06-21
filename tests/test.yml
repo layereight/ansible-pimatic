@@ -12,4 +12,5 @@
     pimatic_port: 443
     pimatic_config_template: "pimatic_config.json.j2"
     pimatic_ssl: true
+    pimatic_ssl_cn: "test.local"
     pimatic_admin_password: "verysecret"
