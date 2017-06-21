@@ -23,7 +23,7 @@ pimatic_ssl: false
 # certificate subject
 pimatic_ssl_cn: "{{ ansible_fqdn }}"
 pimatic_ssl_c: "DE"
-pimatic_ssl_st: ""
-pimatic_ssl_l: ""
+pimatic_ssl_st: "Berlin"
+pimatic_ssl_l: "Berlin"
 pimatic_ssl_o: "pimatic"
 pimatic_ssl_ou: "pimatic"
