@@ -74,11 +74,11 @@ or **armv7l** (Pi 2 Model B or Pi 3 Model B).
   * description: Country in certificate (C in subject).
   
 * **pimatic_ssl_st**
-  * default: ""
+  * default: "Berlin"
   * description: State in certificate (ST in subject).
 
 * **pimatic_ssl_l**
-  * default: ""
+  * default: "Berlin"
   * description: Location in certificate (L in subject).
 
 * **pimatic_ssl_o** 
