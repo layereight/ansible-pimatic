@@ -10,3 +10,4 @@
       - build-essential
       - git
       - openssl
+      - pigpio

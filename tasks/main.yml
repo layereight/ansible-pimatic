@@ -9,18 +9,18 @@
 
 
 
-  - include: prerequisites.yml
+  - import_tasks: prerequisites.yml
     tags: [ 'pimatic', 'pimatic:prerequisites' ]
 
-  - include: nodejs.yml
+  - import_tasks: nodejs.yml
     tags: [ 'pimatic', 'pimatic:nodejs' ]
 
-  - include: home-dir.yml
+  - import_tasks: home-dir.yml
     tags: [ 'pimatic', 'pimatic:home-dir', 'pimatic:ssl', 'pimatic:pimatic' ]
 
-  - include: ssl.yml
+  - import_tasks: ssl.yml
     when: pimatic_ssl == true
     tags: [ 'pimatic', 'pimatic:ssl', 'pimatic:pimatic' ]
 
-  - include: pimatic.yml
+  - import_tasks: pimatic.yml
     tags: [ 'pimatic', 'pimatic:pimatic' ]
