@@ -27,3 +27,6 @@ pimatic_ssl_st: "Berlin"
 pimatic_ssl_l: "Berlin"
 pimatic_ssl_o: "pimatic"
 pimatic_ssl_ou: "pimatic"
+
+# decide to install pigpio (package may not be available on Ubuntu/Debian)
+pimatic_install_pigpio: true

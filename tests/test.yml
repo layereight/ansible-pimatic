@@ -14,3 +14,4 @@
     pimatic_ssl: true
     pimatic_ssl_cn: "test.local"
     pimatic_admin_password: "verysecret"
+    pimatic_install_pigpio: false # Travis is using Ubuntu, pigpio package is not available on Ubuntu

@@ -7,7 +7,8 @@
       state: latest
       update_cache: yes
     with_items:
-      - build-essential
-      - git
-      - openssl
-      - pigpio
+      - { name: "build-essential", install: true }
+      - { name: "git", install: true }
+      - { name: "openssl", install: true }
+      - { name: "pigpio", install: "{{ pimatic_install_pigpio }}" }
+    when: item.install == true
