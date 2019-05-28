@@ -1,4 +1,4 @@
-version: "1.7"
+version: "1.7.0"
 name: pimatic
 description: An Ansible role to install and configure pimatic - a smart home automation software for the Raspberry Pi.
 bindable: False
