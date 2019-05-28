@@ -1,0 +1,9 @@
+version: "1.7"
+name: pimatic
+description: An Ansible role to install and configure pimatic - a smart home automation software for the Raspberry Pi.
+bindable: False
+async: optional
+metadata:
+  displayName: wifi
+  documentationUrl: https://github.com/layereight/ansible-pimatic
+plans: []
