@@ -13,7 +13,7 @@
       name: pimatic
       state: stopped
     failed_when:
-      - result | failed
+      - result is failed
       - "'find' not in result.msg and 'found' not in result.msg"
     register: result
 
@@ -57,7 +57,7 @@
       state: started
 
   #
-  # depending on the configured plugins pimatic start-up can take up to 50min on a Pi Zero
+  # depending on the configured plugins pimatic start-up can take up to 100min on a Pi Zero
   #
   - name: Wait for pimatic to start up on port {{ pimatic_port }}
     when: pimatic_waitfor_startup == true
@@ -65,4 +65,4 @@
       host: 127.0.0.1
       port: "{{ pimatic_port }}"
       state: started
-      timeout: 3600 # 60min
+      timeout: 7200 # 120min
