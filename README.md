@@ -25,7 +25,7 @@ $ ansible-galaxy install -r roles.yml
 ```YAML
 - name: layereight.pimatic
   src: layereight.pimatic
-  version: "1.7.0"
+  version: "2.0.0"
 ```
 * also see the [Ansible Galaxy documentation](http://docs.ansible.com/ansible/galaxy.html) and the 
 [Ansible Galaxy introduction](https://galaxy.ansible.com/intro)
