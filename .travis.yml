@@ -1,9 +1,5 @@
 ---
 language: python
-python: "2.7"
-
-# Use the sudo enabled build environment
-sudo: required
 
 # Install ansible
 addons:
