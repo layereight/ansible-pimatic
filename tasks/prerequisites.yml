@@ -6,6 +6,7 @@
       name: "{{ item.name }}"
       state: latest
       update_cache: yes
+      cache_valid_time: 86400 # 1 day
     with_items:
       - { name: "build-essential", install: true }
       - { name: "git", install: true }

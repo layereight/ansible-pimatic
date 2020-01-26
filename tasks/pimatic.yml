@@ -9,8 +9,8 @@
   #
   - name: Stop pimatic service
     become: yes
-    service:
-      name: pimatic
+    systemd:
+      name: "pimatic.service"
       state: stopped
     failed_when:
       - result is failed
@@ -31,30 +31,32 @@
       dest: "{{ pimatic_home_dir }}/config.json"
       backup: yes
 
+  - name: Install pimatic nodejs app globally (npm install)
+    become: no
+    command: npm install chdir="{{ pimatic_home_dir }}/node_modules/pimatic"
+    changed_when: false # TODO: find out when it actually changed
+
   - name: Install pimatic nodejs app globally (npm link)
     become: yes
     command: npm link chdir="{{ pimatic_home_dir }}/node_modules/pimatic"
     changed_when: false # TODO: find out when it actually changed
 
-  - name: Download and install pimatic service script to /etc/init.d/pimatic
+  - name: Download and install pimatic systemd service script to /lib/systemd/system/
     become: yes
     get_url:
-      url: "https://raw.githubusercontent.com/pimatic/pimatic/v0.9.x/install/pimatic-init-d"
-      dest: "/etc/init.d/pimatic"
+      url: "https://raw.githubusercontent.com/pimatic/pimatic/master/install/pimatic.service"
+      dest: "/lib/systemd/system/"
       owner: root
       group: root
-      mode: 0755
+      mode: 0644
 
-  - name: Install pimatic as system service
+  - name: Enable and start pimatic systemd service
     become: yes
-    command: update-rc.d pimatic defaults
-    changed_when: false # TODO: find out when it actually changed
-
-  - name: Start pimatic service
-    become: yes
-    service:
-      name: pimatic
+    systemd:
+      name: "pimatic.service"
+      daemon_reload: yes
       state: started
+      enabled: yes
 
   #
   # depending on the configured plugins pimatic start-up can take up to 100min on a Pi Zero

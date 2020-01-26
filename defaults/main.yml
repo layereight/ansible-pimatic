@@ -1,5 +1,6 @@
 ---
 
+pimatic_nodejs_version: "v10.18.1"
 # choose nodejs hardware architecture,
 # typically 'armv6l' (Pi Model A, B, B+ or Zero) or 'armv7l' (Pi 2 Model B or Pi 3 Model B)
 pimatic_nodejs_arch: ""

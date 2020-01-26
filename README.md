@@ -39,6 +39,10 @@ or **armv7l** (Pi 2 Model B or Pi 3 Model B).
 
 ### optional
 
+* **pimatic_nodejs_version**
+  * default: "v10.18.1"
+  * description: "Version of nodejs to install"
+
 * **pimatic_app_dir**
   * default: "pimatic-app"
   * description: Name of the directory in the user's home directory where pimatic should be installed to. E.g. with user `pi` the final
