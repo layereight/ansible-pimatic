@@ -4,7 +4,7 @@
     fail:
       msg: "Please set variable pimatic_nodejs_arch to choose nodejs hardware architecture,
       typically 'armv6l' (Pi Model A, B, B+ or Zero) or 'armv7l' (Pi 2 Model B or Pi 3 Model B)"
-    when: pimatic_nodejs_arch == ""
+    when: not pimatic_nodejs_arch
     tags: [ 'pimatic', 'pimatic:nodejs' ]
 
 
@@ -19,7 +19,7 @@
     tags: [ 'pimatic', 'pimatic:home-dir', 'pimatic:ssl', 'pimatic:pimatic' ]
 
   - import_tasks: ssl.yml
-    when: pimatic_ssl == true
+    when: pimatic_ssl
     tags: [ 'pimatic', 'pimatic:ssl', 'pimatic:pimatic' ]
 
   - import_tasks: pimatic.yml
